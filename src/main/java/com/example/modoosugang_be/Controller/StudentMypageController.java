@@ -20,13 +20,13 @@ public class StudentMypageController {
     private final RegisterLectureService registerLectureService;
     private final LectureService lectureService;
 
-//    @PostMapping("/student/Mypage")
-//    public List searchRegisterdLecture(@RequestBody Map<String, Object> param) {
-    @GetMapping("/student/Mypage/{univ}/{id}")
-    public List searchRegisterdLecture(@PathVariable(name = "univ") String univ,
-                                       @PathVariable(name = "id") String id) {
-//        String univ = param.get("univ").toString();
-//        String id = univ + "@" + param.get("id").toString();
+    @PostMapping("/student/Mypage")
+    public List searchRegisterdLecture(@RequestBody Map<String, Object> param) {
+//    @GetMapping("/student/Mypage/{univ}/{id}")
+//    public List searchRegisterdLecture(@PathVariable(name = "univ") String univ,
+//                                       @PathVariable(name = "id") String id) {
+        String univ = param.get("univ").toString();
+        String id = univ + "@" + param.get("id").toString();
         List<RegisterLecture> registerLectures = registerLectureService.findRegisterLecture(univ, id);
         List list = new ArrayList();
 
